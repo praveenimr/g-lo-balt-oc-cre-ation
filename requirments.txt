@@ -2,4 +2,4 @@ html2text==2024.2.26
 pandas==2.2.2
 progressbar2==4.4.2
 streamlit==1.32.0
-xlrd==2.0.1
+xlrd
