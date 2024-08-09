@@ -19,14 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: List files
+        run: ls -la
+
       - name: Set up Python version
         uses: actions/setup-python@v3.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
-
-      - name: List files
-        run: ls -la
 
       - name: Create and start virtual environment
         run: |
