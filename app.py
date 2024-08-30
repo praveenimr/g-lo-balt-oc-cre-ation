@@ -293,7 +293,7 @@ if __name__ == "__main__":
     pass
 
 def main():
-    st.title("Region TOC Generator")
+    st.title("Global TOC Generator")
 
     st.sidebar.header("Upload Excel File")
     uploaded_file = st.sidebar.file_uploader("Choose a file", type="xls", key="file_uploader_1")
