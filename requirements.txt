@@ -3,4 +3,3 @@ pandas
 progressbar2
 streamlit
 xlrd
-progressbar
