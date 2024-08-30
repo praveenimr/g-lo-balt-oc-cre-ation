@@ -5,7 +5,6 @@ from io import StringIO
 import pandas as pd
 import progressbar
 
-
 PASSWORD = "Swati@IMR8180"
 
 def part1(keyword):
@@ -365,7 +364,6 @@ def main():
 
 if __name__ == "__main__":
     password = st.sidebar.text_input("Password", type="password")
-
     # Check password
     if password == PASSWORD:
         main()  # If password is correct, run the app
