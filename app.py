@@ -4,7 +4,7 @@ import os
 from io import StringIO
 import pandas as pd
 import progressbar
-  
+
 PASSWORD = "Swati@IMR8180"
 
 def part1(keyword):
@@ -292,7 +292,7 @@ if __name__ == "__main__":
     pass
 
 def main():
-    st.title("Global TOC Generator")
+    st.title("Region TOC Generator")
 
     st.sidebar.header("Upload Excel File")
     uploaded_file = st.sidebar.file_uploader("Choose a file", type="xls", key="file_uploader_1")
