@@ -85,6 +85,7 @@ def part3(keyword, players, count):
     
     return ch3.replace("\n", "<br />").replace("\t", "&emsp;"), count
 
+
 def part4(keyword, regions, count, segmentation):
     segment = segmentation.split("#")
     
@@ -142,8 +143,8 @@ def part4(keyword, regions, count, segmentation):
     return ch4.replace("\n", "<br />").replace("\t", "&emsp;"), new_count
 
 
+
 def part5(keyword, count):
-    count = count 
     ch5 = (
         "\n\n<strong>Chapter " + str(count) + " Analyst Viewpoint and Conclusion</strong>\n"
         + str(count) + ".1 Recommendations and Concluding Analysis\n"
@@ -154,7 +155,7 @@ def part5(keyword, count):
         + str(count + 1) + ".3 Secondary Research\n\n"
     )
     return ch5.replace("\n", "<br />").replace("\t", "&emsp;")
-
+     
 
 def table(keyword,segmentation,regions,companies):
     
@@ -199,8 +200,8 @@ def table(keyword,segmentation,regions,companies):
     ch2 = ch2.replace("XYZ",keyword.strip().upper())
     
     return ch2.replace("\n","<br />").replace("\t","&emsp;")
-
-
+     
+     
 def create_html_report(uploaded_file, output_dir):
     if uploaded_file is not None:
         try:
