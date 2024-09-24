@@ -142,9 +142,9 @@ def part4(keyword, regions, count, segmentation):
     return ch4.replace("\n", "<br />").replace("\t", "&emsp;"), new_count
 
 
-def part6(keyword, count):
+def part5(keyword, count):
     count = count 
-    ch4 = (
+    ch5 = (
         "\n\n<strong>Chapter " + str(count) + " Analyst Viewpoint and Conclusion</strong>\n"
         + str(count) + ".1 Recommendations and Concluding Analysis\n"
         + str(count) + ".2 Potential Market Strategies\n"
@@ -153,7 +153,7 @@ def part6(keyword, count):
         + str(count + 1) + ".2 Primary Research\n"
         + str(count + 1) + ".3 Secondary Research\n\n"
     )
-    return ch4.replace("\n", "<br />").replace("\t", "&emsp;")
+    return ch5.replace("\n", "<br />").replace("\t", "&emsp;")
 
 
 def table(keyword,segmentation,regions,companies):
@@ -225,10 +225,10 @@ def create_html_report(uploaded_file, output_dir):
         part2_content, segment_heading, count = part2(keyword, segmentation)
         ch3_content, count = part3(keyword, players, count)
         part4_content, count = part4(keyword, regions, count, segmentation)
-        part6_content, count=  part6(keyword, count)      
+        part5_content, count=  part5(keyword, count)     
         table_content = table(keyword, segmentation, regions, players)
 
-        html_content = ch1_content + ch1b_content + part2_content + ch3_content + part4_content + part6_content + table_content
+        html_content = ch1_content + ch1b_content + part2_content + ch3_content + part4_content + part5_content + table_content
 
 
         try:
@@ -290,10 +290,10 @@ def process_excel_file(uploaded_file, id_keyword, id_segmentation, id_player, id
         p2, segment_heading, count = part2(keyword, segmentation)
         p3, count = part3(keyword, players, count)
         p4 = part4(keyword, regions, count, segmentation)
-        p6 = part6(keyword, count)
+        p5 = part5(keyword, count)
         ans_fig += table(keyword, segmentation, regions, players) + "<br /><br />"
         ans_fig += figures(keyword, segmentation, regions, players) + "\n"
-        ans_toc += p1 + p1b + p2[0] + p3[0] + p4 + p6
+        ans_toc += p1 + p1b + p2[0] + p3[0] + p4 + p5
         
         bar.update(j + 1)
     
@@ -341,13 +341,13 @@ def main():
         #p5 = part5(sheet.cell_value(j,id_keyword).strip(),sheet.cell_value(j,id_region),p4[1]+1,sheet.cell_value(j,id_segmentation))
         # p4 = part4(sheet.cell_value(j,id_keyword).strip(),p3[1])
         p4 = part4(sheet.cell_value(j,id_keyword).strip(),sheet.cell_value(j,id_region),p3[1]+1,sheet.cell_value(j,id_segmentation))
-        p6 = part6(sheet.cell_value(j,id_keyword).strip(),p4[1])
+        p5 = part5(sheet.cell_value(j,id_keyword).strip(),p4[1])
         
         ans_fig = ans_fig + '"' + table(sheet.cell_value(j,id_keyword).strip(),sheet.cell_value(j,id_segmentation),regions,sheet.cell_value(j,id_player)) + "<br /><br />"
         
         ans_fig = ans_fig +  figures(sheet.cell_value(j,id_keyword).strip(),sheet.cell_value(j,id_segmentation),regions,sheet.cell_value(j,id_player)) + '"\n'
         
-        ans_toc = ans_toc + '"' + str(p1) + str(p1b) + str(p2[0]) + str(p3[0]) + str(p4) + str(p6) +'"\n'
+        ans_toc = ans_toc + '"' + str(p1) + str(p1b) + str(p2[0]) + str(p3[0]) + str(p4) + str(p5) +'"\n'
             
         progress_bar.progress((j + 1) / sheet.nrows)
 
